@@ -42,9 +42,6 @@ hiring_takehome/
 ```bash
 # evaluate a single case (prints the Result as JSON)
 python run.py cases/case1_feasible_even
-
-# tests
-pytest -q
 ```
 
 ## Approach
