@@ -1,7 +1,4 @@
-# Settlement Feasibility & Fee Engine — Take-home
-
-Welcome, and thanks for taking the time. The full problem is in
-[`ASSIGNMENT.md`](./ASSIGNMENT.md). This README is just orientation.
+# Settlement Feasibility & Fee Engine
 
 ## The task in one line
 
