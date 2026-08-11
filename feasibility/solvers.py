@@ -1,9 +1,9 @@
 from __future__ import annotations
 from datetime import date
 
-from feasibility.models import Client, CreditorRules, Offer
+from feasibility.models import Client, CreditorRules, Offer,  round_off
 from feasibility.engine import FundsOption
-from feasibility.utils import get_effective_floors, round_off
+from feasibility.utils import get_effective_floors
 from feasibility.generators import generate_even_schedule, generate_balloon_schedule, generate_staircase_schedules
 from feasibility.simulator import simulate_schedule
 
