@@ -87,7 +87,7 @@ class Result:
         return out
 
 
-from feasibility.utils import get_cadence_dates, get_effective_floors, round_off
+from feasibility.utils import get_cadence_dates, get_effective_floors
 from feasibility.generators import (
     generate_even_schedule, generate_balloon_schedule, generate_staircase_schedules,
 )
@@ -96,8 +96,8 @@ from feasibility.solvers import solve_min_lump_sum, solve_min_monthly_increment
 
 
 def evaluate_offer(client: Client, offer: Offer, rules: CreditorRules) -> Result:
-    offer_total = round_off(offer_total_cents(offer))
-    total_fee = round_off(program_fee_cents(offer, rules))
+    offer_total = offer_total_cents(offer)
+    total_fee = program_fee_cents(offer, rules)
 
     cadence = get_cadence_dates(client, offer)
     n = len(cadence)

@@ -13,6 +13,7 @@ from dataclasses import dataclass, field
 from datetime import date
 from pathlib import Path
 from typing import Literal
+import math
 
 EntryType = Literal["credit", "debit"]
 
@@ -171,9 +172,12 @@ def load_case(case_dir: str | Path) -> tuple[Client, Offer, CreditorRules]:
     )
 
 
+def round_off(amount: float) -> int:
+    return math.floor(amount + 0.5)
+
 def offer_total_cents(offer: Offer) -> int:
-    return round(offer.settlement_pct * offer.creditor_balance_cents)
+    return round_off(offer.settlement_pct * offer.creditor_balance_cents)
 
 
 def program_fee_cents(offer: Offer, rules: CreditorRules) -> int:
-    return round(rules.program_fee_pct * offer.original_balance_cents)
+    return round_off(rules.program_fee_pct * offer.original_balance_cents)

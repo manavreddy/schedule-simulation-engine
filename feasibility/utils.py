@@ -12,9 +12,6 @@ from feasibility.models import (
 )
 
 
-def round_off(amount: float) -> int:
-    return math.floor(amount + 0.5)
-
 
 def get_cadence_dates(client: Client, offer: Offer) -> list[date]:
     start = offer.first_payment_date or default_first_payment_date(client)
